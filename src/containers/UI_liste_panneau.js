@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import EmployeeForm from "./EmployeeForm";
+import Add_panneau from '../components/forms/Add_panneau';
 import PageHeader from "../components/PageHeader";
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
 import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@material-ui/core';
@@ -139,7 +139,7 @@ export default function UI_liste_panneau() {
                 openPopup={openPopup}
                 setOpenPopup={setOpenPopup}
             >
-                <EmployeeForm
+                <Add_panneau
                     recordForEdit={recordForEdit}
                     addOrEdit={addOrEdit} />
             </Popup>
