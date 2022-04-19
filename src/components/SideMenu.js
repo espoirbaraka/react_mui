@@ -33,7 +33,7 @@ const style = {
         background: '#253053'
     },
     textNav: {
-        color: '#999',
+        color: '#bbb',
         paddingLeft: 15
 
     },
@@ -77,7 +77,7 @@ const SideMenu = (props) => {
                 </NavLink>
             </List>
             <Divider className={classes.line} />
-            <List className={classes.textNav}>
+            <List>
                 <NavLink exact to="/batterie" className={classes.navlink}>
                     <ListItem button key="Batterie">
                         <FontAwesomeIcon className={classes.icon} icon={faBattery}></FontAwesomeIcon>
@@ -100,7 +100,7 @@ const SideMenu = (props) => {
                 </NavLink>
             </List>
             <Divider className={classes.line} />
-            <List className={classes.textNav}>
+            <List>
             <NavLink exact to="/parametre" className={classes.navlink}>
             <ListItem button key="Autres">
                 <FontAwesomeIcon className={classes.icon} icon={faCog}></FontAwesomeIcon>
