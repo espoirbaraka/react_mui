@@ -33,7 +33,7 @@ const style = {
         background: '#253053'
     },
     textNav: {
-        color: '#fff',
+        color: '#999',
         paddingLeft: 15
 
     },

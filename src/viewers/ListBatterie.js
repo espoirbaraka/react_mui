@@ -43,7 +43,7 @@ const useStyles = makeStyles({
   }
 })
 
-function ListPanneau() {
+function ListBatterie(){
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
@@ -57,4 +57,4 @@ function ListPanneau() {
         </ThemeProvider>
     )
 }
-export default ListPanneau
+export default ListBatterie

@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import EmployeeForm from "./EmployeeForm";
-import PageHeader from "../../components/PageHeader";
+import PageHeader from "../components/PageHeader";
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
 import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@material-ui/core';
-import useTable from "../../components/useTable";
-import * as employeeService from "../../services/employeeService";
-import Controls from "../../components/controls/Controls";
+import useTable from "../components/useTable";
+import * as employeeService from "../services/employeeService";
+import Controls from "../components/controls/Controls";
 import { Search } from "@material-ui/icons";
 import AddIcon from '@material-ui/icons/Add';
-import Popup from "../../components/Popup";
+import Popup from "../components/Popup";
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -35,7 +35,7 @@ const headCells = [
     { id: 'actions', label: 'Actions', disableSorting: true }
 ]
 
-export default function Employees() {
+export default function UI_liste_panneau() {
 
     const classes = useStyles();
     const [recordForEdit, setRecordForEdit] = useState(null)
