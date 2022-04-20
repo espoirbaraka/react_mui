@@ -15,9 +15,9 @@ const initialFValues = {
     id: 0,
     etiquette: '',
     pmax: '',
-    mobile: '',
-    city: '',
-    gender: 'male',
+    vmp: '',
+    mpc: '',
+    isc: '',
     departmentId: '',
     hireDate: new Date(),
     isPermanent: false,
@@ -34,8 +34,10 @@ export default function Add_panneau(props) {
             temp.pmax = fieldValues.pmax ? "" : "Saisissez le pmax"
         if ('vmp' in fieldValues)
             temp.vmp = fieldValues.vmp ? "" : "Saisissez le vmp"
-        if ('departmentId' in fieldValues)
-            temp.departmentId = fieldValues.departmentId.length != 0 ? "" : "This field is required."
+        if ('mpc' in fieldValues)
+            temp.mpc = fieldValues.mpc ? "" : "Saisissez le mpc"
+        if ('isc' in fieldValues)
+            temp.mpc = fieldValues.mpc ? "" : "Saisissez l'isc"
         setErrors({
             ...temp
         })
@@ -93,21 +95,21 @@ export default function Add_panneau(props) {
                         error={errors.vmp}
                     />
                     <Controls.Input
-                        label="City"
-                        name="city"
+                        label="Mpc"
+                        name="mpc"
                         value={values.city}
                         onChange={handleInputChange}
                     />
 
                 </Grid>
                 <Grid item xs={6}>
-                    <Controls.RadioGroup
+                    {/*<Controls.RadioGroup
                         name="gender"
                         label="Gender"
                         value={values.gender}
                         onChange={handleInputChange}
                         items={genderItems}
-                    />
+    />
                     <Controls.Select
                         name="departmentId"
                         label="Department"
@@ -115,11 +117,11 @@ export default function Add_panneau(props) {
                         onChange={handleInputChange}
                         options={employeeService.getDepartmentCollection()}
                         error={errors.departmentId}
-                    />
-                    <Controls.DatePicker
-                        name="hireDate"
-                        label="Hire Date"
-                        value={values.hireDate}
+                    />*/}
+                    <Controls.Input
+                        label="Isc"
+                        name="isc"
+                        value={values.city}
                         onChange={handleInputChange}
                     />
                     <Controls.Checkbox
