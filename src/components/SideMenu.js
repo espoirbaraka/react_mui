@@ -69,7 +69,7 @@ const SideMenu = (props) => {
             <Toolbar />
             
             <List>
-                <NavLink exact to="/" className={classes.navlink}>
+                <NavLink exact to="/home" className={classes.navlink}>
                     <ListItem button key="Dashboard">
                         <FontAwesomeIcon className={classes.icon} icon={faDashboard}></FontAwesomeIcon>
                         <ListItemText className={classes.textNav} primary="Dashboard" />

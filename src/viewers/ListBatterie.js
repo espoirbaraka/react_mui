@@ -4,7 +4,7 @@ import SideMenu from "../components/SideMenu";
 import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Header from "../components/Header";
 import PageHeader from '../components/PageHeader';
-import UI_liste_panneau from "../containers/UI_liste_panneau";
+import UI_liste_batterie from '../containers/UI_liste_batterie';
 
 
 const theme = createMuiTheme({
@@ -51,7 +51,7 @@ function ListBatterie(){
             <div className={classes.appMain}>
                 <Header />
 
-                <UI_liste_panneau />
+                <UI_liste_batterie />
             </div>
             <CssBaseline />
         </ThemeProvider>

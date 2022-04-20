@@ -140,7 +140,7 @@ export default function UI_liste_batterie() {
                 <TblPagination />
             </Paper>
             <Popup
-                title="Nouveau panneau"
+                title="Nouvelle batterie"
                 openPopup={openPopup}
                 setOpenPopup={setOpenPopup}
             >
