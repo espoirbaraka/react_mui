@@ -18,8 +18,10 @@ const initialFValues = {
     vmp: '',
     mpc: '',
     isc: '',
-    departmentId: '',
-    hireDate: new Date(),
+    msv: '',
+    test: '',
+    tc: '',
+    size: '',
     isPermanent: false,
 }
 
@@ -37,7 +39,15 @@ export default function Add_panneau(props) {
         if ('mpc' in fieldValues)
             temp.mpc = fieldValues.mpc ? "" : "Saisissez le mpc"
         if ('isc' in fieldValues)
-            temp.mpc = fieldValues.mpc ? "" : "Saisissez l'isc"
+            temp.isc = fieldValues.isc ? "" : "Saisissez l'isc"
+        if ('msv' in fieldValues)
+            temp.msv = fieldValues.msv ? "" : "Saisissez le msv"
+        if ('test' in fieldValues)
+            temp.test = fieldValues.test ? "" : "Saisissez le test"
+        if ('tc' in fieldValues)
+            temp.tc = fieldValues.tc ? "" : "Saisissez le tc"
+        if ('size' in fieldValues)
+            temp.size = fieldValues.size ? "" : "Saisissez le size"
         setErrors({
             ...temp
         })
@@ -97,8 +107,16 @@ export default function Add_panneau(props) {
                     <Controls.Input
                         label="Mpc"
                         name="mpc"
+                        value={values.mpc}
+                        onChange={handleInputChange}
+                        error={errors.mpc}
+                    />
+                    <Controls.Input
+                        label="Isc"
+                        name="isc"
                         value={values.city}
                         onChange={handleInputChange}
+                        error={errors.isc}
                     />
 
                 </Grid>
@@ -118,25 +136,42 @@ export default function Add_panneau(props) {
                         options={employeeService.getDepartmentCollection()}
                         error={errors.departmentId}
                     />*/}
+                    
                     <Controls.Input
-                        label="Isc"
-                        name="isc"
-                        value={values.city}
+                        label="Msv"
+                        name="msv"
+                        value={values.msv}
                         onChange={handleInputChange}
+                        error={errors.msv}
                     />
-                    <Controls.Checkbox
-                        name="isPermanent"
-                        label="Permanent Employee"
-                        value={values.isPermanent}
+                    <Controls.Input
+                        label="Test_cond"
+                        name="test"
+                        value={values.test}
                         onChange={handleInputChange}
+                        error={errors.test}
+                    />
+                    <Controls.Input
+                        label="Tc"
+                        name="tc"
+                        value={values.tc}
+                        onChange={handleInputChange}
+                        error={errors.tc}
+                    />
+                    <Controls.Input
+                        label="Size"
+                        name="size"
+                        value={values.size}
+                        onChange={handleInputChange}
+                        error={errors.size}
                     />
 
                     <div>
                         <Controls.Button
                             type="submit"
-                            text="Submit" />
+                            text="Enregister" />
                         <Controls.Button
-                            text="Reset"
+                            text="Reinitialiser"
                             color="default"
                             onClick={resetForm} />
                     </div>
