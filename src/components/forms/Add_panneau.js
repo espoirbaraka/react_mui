@@ -13,8 +13,8 @@ const genderItems = [
 
 const initialFValues = {
     id: 0,
-    fullName: '',
-    email: '',
+    etiquette: '',
+    pmax: '',
     mobile: '',
     city: '',
     gender: 'male',
@@ -28,12 +28,12 @@ export default function Add_panneau(props) {
 
     const validate = (fieldValues = values) => {
         let temp = { ...errors }
-        if ('fullName' in fieldValues)
-            temp.fullName = fieldValues.fullName ? "" : "This field is required."
-        if ('email' in fieldValues)
-            temp.email = (/$^|.+@.+..+/).test(fieldValues.email) ? "" : "Email is not valid."
-        if ('mobile' in fieldValues)
-            temp.mobile = fieldValues.mobile.length > 9 ? "" : "Minimum 10 numbers required."
+        if ('etiquette' in fieldValues)
+            temp.etiquette = fieldValues.etiquette ? "" : "Saisissez l'etiquette"
+        if ('pmax' in fieldValues)
+            temp.pmax = fieldValues.pmax ? "" : "Saisissez le pmax"
+        if ('vmp' in fieldValues)
+            temp.vmp = fieldValues.vmp ? "" : "Saisissez le vmp"
         if ('departmentId' in fieldValues)
             temp.departmentId = fieldValues.departmentId.length != 0 ? "" : "This field is required."
         setErrors({
@@ -72,25 +72,25 @@ export default function Add_panneau(props) {
             <Grid container>
                 <Grid item xs={6}>
                     <Controls.Input
-                        name="fullName"
-                        label="Full Name"
-                        value={values.fullName}
+                        name="etiquette"
+                        label="Etiquette"
+                        value={values.etiquette}
                         onChange={handleInputChange}
-                        error={errors.fullName}
+                        error={errors.etiquette}
                     />
                     <Controls.Input
-                        label="Email"
-                        name="email"
-                        value={values.email}
+                        label="Pmax"
+                        name="pmax"
+                        value={values.pmax}
                         onChange={handleInputChange}
-                        error={errors.email}
+                        error={errors.pmax}
                     />
                     <Controls.Input
-                        label="Mobile"
-                        name="mobile"
-                        value={values.mobile}
+                        label="Vmp"
+                        name="vmp"
+                        value={values.vmp}
                         onChange={handleInputChange}
-                        error={errors.mobile}
+                        error={errors.vmp}
                     />
                     <Controls.Input
                         label="City"

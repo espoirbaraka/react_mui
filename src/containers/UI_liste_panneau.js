@@ -86,15 +86,15 @@ export default function UI_liste_panneau() {
     return (
         <>
             <PageHeader
-                title="Panneau solaires"
-                subTitle="Liste"
+                title="Panneau"
+                subTitle="Liste des panneaux solaires"
                 icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
             />
             <Paper className={classes.pageContent}>
 
                 <Toolbar>
                     <Controls.Input
-                        label="Search Employees"
+                        label="Recherchez un panneau"
                         className={classes.searchInput}
                         InputProps={{
                             startAdornment: (<InputAdornment position="start">
@@ -104,7 +104,7 @@ export default function UI_liste_panneau() {
                         onChange={handleSearch}
                     />
                     <Controls.Button
-                        text="Add New"
+                        text="Nouveau"
                         variant="outlined"
                         startIcon={<AddIcon />}
                         className={classes.newButton}
@@ -140,7 +140,7 @@ export default function UI_liste_panneau() {
                 <TblPagination />
             </Paper>
             <Popup
-                title="Employee Form"
+                title="Nouveau panneau"
                 openPopup={openPopup}
                 setOpenPopup={setOpenPopup}
             >
