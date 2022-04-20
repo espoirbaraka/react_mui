@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Add_panneau from '../components/forms/Add_panneau';
+import Add_batterie from '../components/forms/Add_batterie';
 import PageHeader from "../components/PageHeader";
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
 import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@material-ui/core';
@@ -29,14 +29,11 @@ const useStyles = makeStyles(theme => ({
 
 const headCells = [
     { id: 'Etiquette', label: 'Etiquette' },
-    { id: 'Pmax', label: 'Pmax' },
-    { id: 'Vmp', label: 'Vmp' },
-    { id: 'Mpc', label: 'Mpc' },
-    { id: 'Isc', label: 'Isc' },
-    { id: 'Msv', label: 'Msv' },
-    { id: 'Test_cond', label: 'Test_cond' },
-    { id: 'Tc', label: 'Tc' },
-    { id: 'Size', label: 'Size' },
+    { id: 'Nom_vol', label: 'Nom_vol' },
+    { id: 'CyclVol', label: 'CyclVol' },
+    { id: 'LoatVol', label: 'LoatVol' },
+    { id: 'Capacite', label: 'Capacite' },
+    { id: 'Temp_coef', label: 'Temp_coef' },
     { id: 'actions', label: 'Actions', disableSorting: true }
 ]
 
@@ -144,7 +141,7 @@ export default function UI_liste_batterie() {
                 openPopup={openPopup}
                 setOpenPopup={setOpenPopup}
             >
-                <Add_panneau
+                <Add_batterie 
                     recordForEdit={recordForEdit}
                     addOrEdit={addOrEdit} />
             </Popup>
