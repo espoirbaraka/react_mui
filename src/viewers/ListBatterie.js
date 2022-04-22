@@ -5,7 +5,7 @@ import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@materia
 import Header from "../components/Header";
 import PageHeader from '../components/PageHeader';
 import UI_liste_batterie from '../containers/UI_liste_batterie';
-
+import Loader from '../components/Loader';
 
 const theme = createMuiTheme({
   palette: {
@@ -47,6 +47,7 @@ function ListBatterie(){
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
+            <Loader />
             <SideMenu />
             <div className={classes.appMain}>
                 <Header />
