@@ -1,10 +1,10 @@
 import React from 'react'
-import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, makeStyles, Toolbar, Typography, withStyles } from "@material-ui/core";
-import { AddCircleOutlineOutlined, SubjectOutlined, InboxIcon } from '@material-ui/icons';
+import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, makeStyles, Toolbar, Typography, withStyles } from "@mui/material";
+import { AddCircleOutlineOutlined, SubjectOutlined, InboxIcon } from '@mui/icons-material';
 import { faHome, faCog, faDashboard, faSolarPanel, faBattery, faList } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
-import { AccessAlarmsSharp } from '@material-ui/icons'
+import { AccessAlarmsSharp } from '@mui/icons-material'
 
 
 // withStyles & makeStyles

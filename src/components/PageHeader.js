@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper, Card, Typography, makeStyles, Button } from '@material-ui/core'
+import { Paper, Card, Typography, makeStyles, Button } from '@mui/material'
 
 const useStyles = makeStyles(theme => ({
     root: {

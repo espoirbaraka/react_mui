@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import Add_panneau from '../components/forms/Add_panneau';
 import PageHeader from "../components/PageHeader";
-import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
-import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@material-ui/core';
+import PeopleOutlineTwoToneIcon from '@mui/icons-material/PeopleOutlineTwoTone';
+import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@mui/material';
 import useTable from "../components/useTable";
 import * as employeeService from "../services/employeeService";
 import Controls from "../components/controls/Controls";
-import { Search } from "@material-ui/icons";
-import AddIcon from '@material-ui/icons/Add';
+import { Search } from "@mui/icons-material";
+import AddIcon from '@mui/icons-material/Add';
 import Popup from "../components/Popup";
-import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
-import CloseIcon from '@material-ui/icons/Close';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import CloseIcon from '@mui/icons-material/Close';
 
 const useStyles = makeStyles(theme => ({
     pageContent: {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, LinearProgress, makeStyles, createStyles } from "@material-ui/core";
+import { Box, LinearProgress, makeStyles, createStyles } from "@mui/material";
 import { useState, useEffect } from "react";
 
 function Loader() {

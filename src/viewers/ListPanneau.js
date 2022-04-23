@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App/App.css';
 import SideMenu from "../components/SideMenu";
-import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@mui/material';
 import Header from "../components/Header";
 import PageHeader from '../components/PageHeader';
 import UI_liste_panneau from "../containers/UI_liste_panneau";
