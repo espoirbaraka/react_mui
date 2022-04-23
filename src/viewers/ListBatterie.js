@@ -48,16 +48,10 @@ const useStyles = makeStyles({
 function ListBatterie(){
     const classes = useStyles();
     return (
-        <ThemeProvider theme={theme}>
+        
             <Loader />
-            <SideMenu />
-            <div className={classes.appMain}>
-                <Header />
-
-                <Feed />
-            </div>
-            <CssBaseline />
-        </ThemeProvider>
+            
+        
     )
 }
 export default ListBatterie
