@@ -1,18 +1,26 @@
 import React from "react";
-import { LinearProgress } from "@material-ui/core";
+import { Box, LinearProgress, makeStyles, createStyles } from "@material-ui/core";
+import { useState, useEffect } from "react";
 
 function Loader() {
-    const [progress, setProgress] = React.useState(30);
-    const [bufferProgress, setBufferProgress] = React.useState(60);
-    return (
-        <div style={{ "paddingTop": "0px" }}>
-            <LinearProgress
-                variant="determinate"
-                value={progress}
-                color="secondary"
-                valueBuffer={bufferProgress}
-            />
-        </div>
-    )
+  const [level, setLevel] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setLevel((newLevel) => (newLevel >= 100 ? 0 : newLevel + 10));
+    }, 700);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+  return (
+    <Box>
+      <LinearProgress
+        variant="buffer"
+        value={level}
+        valueBuffer={level + 10}
+      />
+    </Box>
+  )
 }
 export default Loader;
