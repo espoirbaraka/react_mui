@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Add_batterie from '../components/forms/Add_batterie';
 import PageHeader from "../components/PageHeader";
 import PeopleOutlineTwoToneIcon from '@mui/icons-material/PeopleOutlineTwoTone';
-import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@mui/material';
+import { Paper, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@mui/material';
 import useTable from "../components/useTable";
 import * as employeeService from "../services/employeeService";
 import Controls from "../components/controls/Controls";
@@ -11,6 +11,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Popup from "../components/Popup";
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import CloseIcon from '@mui/icons-material/Close';
+import {makeStyles} from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
     pageContent: {

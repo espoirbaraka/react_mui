@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, LinearProgress, makeStyles, createStyles } from "@mui/material";
+import { Box, LinearProgress} from "@mui/material";
 import { useState, useEffect } from "react";
+import {makeStyles, withStyles} from '@mui/styles'
 
 function Loader() {
   const [level, setLevel] = useState(0);

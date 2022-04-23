@@ -1,10 +1,10 @@
 import React from 'react'
-import { AppBar, Toolbar, Grid, InputBase, IconButton, Badge, makeStyles } from '@mui/material'
+import { AppBar, Toolbar, Grid, InputBase, IconButton, Badge } from '@mui/material'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import SearchIcon from '@mui/icons-material/Search';
-
+import {makeStyles} from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
     root: {

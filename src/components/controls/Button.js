@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button as MuiButton, makeStyles } from "@mui/material";
-
+import { Button as MuiButton } from "@mui/material";
+import {makeStyles} from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
     root: {

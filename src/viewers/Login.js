@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@mui/material'
-import LockOutlinedIcon from '@mui/icons-material';
+import { LockClockOutlined } from '@mui/icons-material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 const Login=()=>{
@@ -12,7 +12,7 @@ const Login=()=>{
         <Grid>
             <Paper elevation={10} style={paperStyle}>
                 <Grid align='center'>
-                     <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
+                     <Avatar style={avatarStyle}><LockClockOutlined/></Avatar>
                     <h2>Sign In</h2>
                 </Grid>
                 <TextField label='Username' placeholder='Enter username' fullWidth required/>
