@@ -1,13 +1,14 @@
 import React from 'react';
 import '../App/App.css';
 import SideMenu from "../components/SideMenu";
-import { CssBaseline, createMuiTheme, ThemeProvider } from '@mui/material';
+import { CssBaseline, createMuiTheme, ThemeProvider, LinearProgress, Box } from '@mui/material';
 import Header from "../components/Header";
 import PageHeader from '../components/PageHeader';
 import UI_liste_batterie from '../containers/UI_liste_batterie';
-import Loader from '../components/Loader';
 import {makeStyles, withStyles} from '@mui/styles'
+import { useState, useEffect } from "react";
 import Feed from '../components/Feed';
+import Progress from '../components/Progress';
 
 const theme = createMuiTheme({
   palette: {
@@ -23,21 +24,19 @@ const theme = createMuiTheme({
       default: "#f4f5fd"
     },
   },
-  overrides:{
-    MuiAppBar:{
-      root:{
-        transform:'translateZ(0)'
+  overrides: {
+    MuiAppBar: {
+      root: {
+        transform: 'translateZ(0)'
       }
     }
   },
-  props:{
-    MuiIconButton:{
-      disableRipple:true
+  props: {
+    MuiIconButton: {
+      disableRipple: true
     }
   }
 })
-
-
 const useStyles = makeStyles({
   appMain: {
     paddingLeft: '250px',
@@ -47,11 +46,31 @@ const useStyles = makeStyles({
 
 function ListBatterie(){
     const classes = useStyles();
+    const [process, setProcess] = useState(true);
+
+    setTimeout(() => {
+      setProcess(false);
+    }, [500]);
     return (
-        
-            <Loader />
-            
-        
+      < Box >
+      {
+        process ? (
+          <Progress />
+        ) : (
+          <>
+            <ThemeProvider theme={theme}>
+              <SideMenu />
+              <div className={classes.appMain}>
+                <Header />
+                
+                <Feed />
+              </div>
+              <CssBaseline />
+            </ThemeProvider>
+          </>
+        )
+      }
+    </Box >
     )
 }
 export default ListBatterie
