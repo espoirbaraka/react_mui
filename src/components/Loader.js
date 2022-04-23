@@ -5,6 +5,11 @@ import { useState, useEffect } from "react";
 function Loader() {
   const [level, setLevel] = useState(0);
 
+
+  setTimeout(() => {
+    setLevel(false);
+  }, [3000]);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setLevel((newLevel) => (newLevel >= 100 ? 0 : newLevel + 10));
@@ -18,6 +23,7 @@ function Loader() {
       <LinearProgress
         variant="buffer"
         value={level}
+        color="secondary"
         valueBuffer={level + 10}
       />
     </Box>

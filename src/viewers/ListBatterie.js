@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import PageHeader from '../components/PageHeader';
 import UI_liste_batterie from '../containers/UI_liste_batterie';
 import Loader from '../components/Loader';
+//import Feed from '../components/Feed';
 
 const theme = createMuiTheme({
   palette: {
@@ -52,7 +53,7 @@ function ListBatterie(){
             <div className={classes.appMain}>
                 <Header />
 
-                <UI_liste_batterie />
+                {/*<Feed />*/}
             </div>
             <CssBaseline />
         </ThemeProvider>
