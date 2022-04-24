@@ -1,6 +1,5 @@
 import React from 'react'
 import { Divider, List, ListItem, ListItemText, Toolbar } from "@mui/material";
-import { AddCircleOutlineOutlined, SubjectOutlined } from '@mui/icons-material';
 import { faCog, faDashboard, faSolarPanel, faBattery, faList } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
@@ -50,18 +49,6 @@ const style = {
 const SideMenu = (props) => {
     const { classes } = props;
 
-    const menuItems = [
-        {
-            text: 'Mu first note',
-            icon: <SubjectOutlined color='secondary' />,
-            path: '/'
-        },
-        {
-            text: 'Mu second note',
-            icon: <AddCircleOutlineOutlined color='secondary' />,
-            path: '/home'
-        }
-    ]
     return (
         <div className={classes.sideMenu}>
 
