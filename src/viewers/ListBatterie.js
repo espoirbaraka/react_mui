@@ -39,6 +39,10 @@ const useStyles = makeStyles({
   appMain: {
     paddingLeft: '250px',
     width: '100%'
+  },
+  progress: {
+    marginTop: '0px',
+    width: '100%'
   }
 })
 
