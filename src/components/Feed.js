@@ -1,7 +1,6 @@
 import { Box, Stack } from "@mui/material";
-import { Skeleton } from '@mui/lab/';
+import { Skeleton } from '@mui/material/';
 import React, { useState } from "react";
-import UI_liste_batterie from "../containers/UI_liste_batterie";
 
 const Feed = () => {
     const [loading, setLoading] = useState(true);

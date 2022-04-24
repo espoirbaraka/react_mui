@@ -1,10 +1,6 @@
 import React from "react";
-import { Box, CssBaseline, LinearProgress, createMuiTheme, ThemeProvider } from "@mui/material";
+import { Box, LinearProgress } from "@mui/material";
 import { useState, useEffect } from "react";
-import { makeStyles } from '@mui/styles'
-import SideMenu from "./SideMenu";
-import Header from "./Header";
-import Feed from '../components/Feed';
 
 
 function Progress() {

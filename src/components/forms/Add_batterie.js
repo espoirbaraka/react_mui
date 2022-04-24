@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Grid, } from '@mui/material';
 import Controls from "../controls/Controls";
 import { useForm, Form } from '../useForm';
-import * as employeeService from "../../services/employeeService";
-
 
 const genderItems = [
     { id: 'male', title: 'Male' },

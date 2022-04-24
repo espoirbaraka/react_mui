@@ -1,11 +1,10 @@
 import React from 'react'
-import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
-import { AddCircleOutlineOutlined, SubjectOutlined, InboxIcon } from '@mui/icons-material';
-import { faHome, faCog, faDashboard, faSolarPanel, faBattery, faList } from '@fortawesome/free-solid-svg-icons';
+import { Divider, List, ListItem, ListItemText, Toolbar } from "@mui/material";
+import { AddCircleOutlineOutlined, SubjectOutlined } from '@mui/icons-material';
+import { faCog, faDashboard, faSolarPanel, faBattery, faList } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
-import { AccessAlarmsSharp } from '@mui/icons-material'
-import {makeStyles, withStyles} from '@mui/styles'
+import {withStyles} from '@mui/styles'
 
 // withStyles & makeStyles
 const drawerWidth = 250

@@ -1,16 +1,15 @@
 import React from 'react';
 import '../App/App.css';
 import SideMenu from "../components/SideMenu";
-import { CssBaseline, createMuiTheme, Box, ThemeProvider, LinearProgress } from '@mui/material';
+import { CssBaseline, Box, ThemeProvider } from '@mui/material';
 import Header from "../components/Header";
-import PageHeader from '../components/PageHeader';
-import {makeStyles, withStyles} from '@mui/styles'
-import { useState, useEffect } from "react";
+import {makeStyles} from '@mui/styles'
+import { useState } from "react";
 import Progress from '../components/Progress';
 import UI_liste_panneau from '../containers/UI_liste_panneau'
-import Feed from '../components/Feed';
+import { createTheme } from '@mui/material/styles'
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: "#333996",
