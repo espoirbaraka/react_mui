@@ -63,7 +63,7 @@ function ListBatterie(){
               <div className={classes.appMain}>
                 <Header />
                 
-                <Feed />
+                <UI_liste_batterie />
               </div>
               <CssBaseline />
             </ThemeProvider>

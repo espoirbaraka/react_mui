@@ -1,11 +1,14 @@
 import React from 'react';
 import '../App/App.css';
 import SideMenu from "../components/SideMenu";
-import { CssBaseline, createMuiTheme, ThemeProvider } from '@mui/material';
+import { CssBaseline, createMuiTheme, Box, ThemeProvider, LinearProgress } from '@mui/material';
 import Header from "../components/Header";
 import PageHeader from '../components/PageHeader';
-import UI_liste_panneau from "../containers/UI_liste_panneau";
 import {makeStyles, withStyles} from '@mui/styles'
+import { useState, useEffect } from "react";
+import Progress from '../components/Progress';
+import UI_liste_panneau from '../containers/UI_liste_panneau'
+import Feed from '../components/Feed';
 
 const theme = createMuiTheme({
   palette: {
@@ -21,21 +24,19 @@ const theme = createMuiTheme({
       default: "#f4f5fd"
     },
   },
-  overrides:{
-    MuiAppBar:{
-      root:{
-        transform:'translateZ(0)'
+  overrides: {
+    MuiAppBar: {
+      root: {
+        transform: 'translateZ(0)'
       }
     }
   },
-  props:{
-    MuiIconButton:{
-      disableRipple:true
+  props: {
+    MuiIconButton: {
+      disableRipple: true
     }
   }
 })
-
-
 const useStyles = makeStyles({
   appMain: {
     paddingLeft: '250px',
@@ -43,18 +44,33 @@ const useStyles = makeStyles({
   }
 })
 
-function ListPanneau() {
+function ListPanneau(){
     const classes = useStyles();
-    return (
-        <ThemeProvider theme={theme}>
-            <SideMenu />
-            <div className={classes.appMain}>
-                <Header />
+    const [process, setProcess] = useState(true);
 
+    setTimeout(() => {
+      setProcess(false);
+    }, [500]);
+    return (
+      < Box >
+      {
+        process ? (
+          <Progress />
+        ) : (
+          <>
+            <ThemeProvider theme={theme}>
+              <SideMenu />
+              <div className={classes.appMain}>
+                <Header />
+                
                 <UI_liste_panneau />
-            </div>
-            <CssBaseline />
-        </ThemeProvider>
+              </div>
+              <CssBaseline />
+            </ThemeProvider>
+          </>
+        )
+      }
+    </Box >
     )
 }
 export default ListPanneau
