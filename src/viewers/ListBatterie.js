@@ -40,10 +40,10 @@ const useStyles = makeStyles({
     paddingLeft: '250px',
     width: '100%'
   },
-  progress: {
-    marginTop: '0px',
-    width: '100%'
-  }
+  // progress: {
+  //   top: '0',
+  //   width: '100%'
+  // }
 })
 
 function ListBatterie(){
@@ -57,7 +57,7 @@ function ListBatterie(){
       < Box >
       {
         process ? (
-          <Progress />
+          <></>
         ) : (
           <>
             <ThemeProvider theme={theme}>

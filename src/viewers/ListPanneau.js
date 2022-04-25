@@ -54,9 +54,8 @@ function ListPanneau(){
       < Box >
       {
         process ? (
-          <Progress />
+          <></>
         ) : (
-          <>
             <ThemeProvider theme={theme}>
               <SideMenu />
               <div className={classes.appMain}>
@@ -66,7 +65,6 @@ function ListPanneau(){
               </div>
               <CssBaseline />
             </ThemeProvider>
-          </>
         )
       }
     </Box >

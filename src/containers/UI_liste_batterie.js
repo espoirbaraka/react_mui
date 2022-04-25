@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     },
     newButton: {
         position: 'absolute',
-        right: '10px'
+        right: '-30px'
     }
 }))
 
