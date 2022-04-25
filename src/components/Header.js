@@ -9,7 +9,6 @@ import {makeStyles} from '@mui/styles'
 const useStyles = makeStyles(theme => ({
     root: {
         backgroundColor: '#fff',
-        
     },
     searchInput: {
         opacity: '0.6',

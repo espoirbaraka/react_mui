@@ -28,7 +28,7 @@ const Login=()=>{
                  />
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
                 <Typography >
-                     <Link href="#" >
+                     <Link href="home" >
                         Forgot password ?
                 </Link>
                 </Typography>
