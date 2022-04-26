@@ -169,10 +169,10 @@ export default function Add_panneau(props) {
                         <Controls.Button
                             type="submit"
                             text="Enregister" />
-                        <Controls.Button
+                        {/*<Controls.Button
                             text="Reinitialiser"
                             color="default"
-                            onClick={resetForm} />
+                onClick={resetForm} />*/}
                     </div>
                 </Grid>
             </Grid>
