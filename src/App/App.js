@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from '../viewers/Login';
 import ListPanneau from '../viewers/ListPanneau';
 import ListBatterie from '../viewers/ListBatterie';
+// import Home from '../viewers/Home';
 
 function App(){
   return (
