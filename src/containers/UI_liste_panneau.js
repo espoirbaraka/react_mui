@@ -99,7 +99,7 @@ export default function UI_liste_panneau() {
             ) : (
                 <>
                     <PageHeader
-                        title="Panneau"
+                        title="Panneau solaire"
                         subTitle="Liste des panneaux solaires"
                         icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
                     />

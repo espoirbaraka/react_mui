@@ -2,7 +2,7 @@ import React from 'react'
 import { Divider, List, ListItem, ListItemText, Toolbar } from "@mui/material";
 import { faCog, faDashboard, faSolarPanel, faBattery, faList } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import {withStyles} from '@mui/styles'
 
 // withStyles & makeStyles
@@ -43,11 +43,15 @@ const style = {
     },
     navlink: {
         textDecoration: 'none'
-    }
+    },
+    active: {
+        background: '#f4f4f4'
+    },
 }
 
 const SideMenu = (props) => {
     const { classes } = props;
+    const location = useLocation();
 
     return (
         <div className={classes.sideMenu}>
@@ -55,7 +59,7 @@ const SideMenu = (props) => {
             <Toolbar />
             
             <List>
-                <NavLink exact to="/home" className={classes.navlink}>
+                <NavLink exact to="/home" className={location.pathname == '/home' ? classes.active : null}>
                     <ListItem button key="Dashboard">
                         <FontAwesomeIcon className={classes.icon} icon={faDashboard}></FontAwesomeIcon>
                         <ListItemText className={classes.textNav} primary="Dashboard" />

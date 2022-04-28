@@ -6,36 +6,36 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import SearchIcon from '@mui/icons-material/Search';
 import {makeStyles} from '@mui/styles'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(theme2 => ({
     root: {
         backgroundColor: '#fff',
     },
     searchInput: {
         opacity: '0.6',
-        padding: `0px ${theme.spacing(1)}px`,
+        padding: `0px ${theme2.spacing(1)}px`,
         fontSize: '0.8rem',
         '&:hover': {
             backgroundColor: '#f2f2f2'
         },
         '& .MuiSvgIcon-root': {
-            marginRight: theme.spacing(1)
+            marginRight: theme2.spacing(1)
         }
     }
 }))
 
 export default function Header() {
 
-    const classes = useStyles();
+    const classes2 = useStyles();
 
     return (
-        <AppBar position="static" className={classes.root}>
+        <AppBar position="static" className={classes2.root}>
             <Toolbar>
                 <Grid container
                     alignItems="center">
                     <Grid item>
                         <InputBase
                             placeholder="Recherchez ici"
-                            className={classes.searchInput}
+                            className={classes2.searchInput}
                             startAdornment={<SearchIcon fontSize="small" />}
                         />
                     </Grid>

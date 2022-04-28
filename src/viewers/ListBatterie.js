@@ -40,10 +40,6 @@ const useStyles = makeStyles({
     paddingLeft: '250px',
     width: '100%'
   },
-  // progress: {
-  //   top: '0',
-  //   width: '100%'
-  // }
 })
 
 function ListBatterie(){
