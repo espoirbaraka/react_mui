@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect  } from 'react'
 import Add_batterie from '../components/forms/Add_batterie';
 import PageHeader from "../components/PageHeader";
 import PeopleOutlineTwoToneIcon from '@mui/icons-material/PeopleOutlineTwoTone';
@@ -93,6 +93,13 @@ export default function UI_liste_batterie() {
     setTimeout(() => {
         setLoading(false);
     }, [1000]);
+    let [batteries, setBatteries] = useState()
+    useEffect(() => {
+        fetch("http://localhost:8000/api/panneau-list/")
+            .then(response => response.json())
+
+            .then(batteries => setBatteries(batteries))
+    }, [])
 
 
     return (
@@ -132,16 +139,20 @@ export default function UI_liste_batterie() {
                             <TblHead />
                             <TableBody>
                                 {
-                                    recordsAfterPagingAndSorting().map(item =>
-                                    (<TableRow key={item.id}>
-                                        <TableCell>{item.fullName}</TableCell>
-                                        <TableCell>{item.email}</TableCell>
-                                        <TableCell>{item.mobile}</TableCell>
-                                        <TableCell>{item.department}</TableCell>
+                                    batteries.map(batterie =>
+                                    (<TableRow key={batterie.id}>
+                                        <TableCell key={batterie.id}><img src={"http://127.0.0.1:8000" + batterie.image} style={{width:35,height:35,boderRadius:'5px!important'}}/></TableCell>
+                                        <TableCell>{batterie.description}</TableCell>
+                                        <TableCell>{batterie.etatDevice}</TableCell>
+                                        <TableCell>{batterie.maximum_power}</TableCell>
+                                        <TableCell>{batterie.power_voltage}</TableCell>
+                                        <TableCell>{batterie.power_current}</TableCell>
+                                        <TableCell>{batterie.circuit_voltage}</TableCell>
+                                        <TableCell>{batterie.short_voltage}</TableCell>
                                         <TableCell>
                                             <Controls.ActionButton
                                                 color="primary"
-                                                onClick={() => { openInPopup(item) }}>
+                                                onClick={() => { openInPopup(batterie) }}>
                                                 <EditOutlinedIcon fontSize="small" />
                                             </Controls.ActionButton>
                                             <Controls.ActionButton
