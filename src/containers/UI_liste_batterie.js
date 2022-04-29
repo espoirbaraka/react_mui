@@ -147,8 +147,6 @@ export default function UI_liste_batterie() {
                                         <TableCell>{batterie.maximum_power}</TableCell>
                                         <TableCell>{batterie.power_voltage}</TableCell>
                                         <TableCell>{batterie.power_current}</TableCell>
-                                        <TableCell>{batterie.circuit_voltage}</TableCell>
-                                        <TableCell>{batterie.short_voltage}</TableCell>
                                         <TableCell>
                                             <Controls.ActionButton
                                                 color="primary"
