@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
-import { Grid, } from '@mui/material';
+import React, { useEffect,useState } from 'react'
+import { Grid, Select, MenuItem } from '@mui/material';
 import Controls from "../controls/Controls";
 import { useForm, Form } from '../useForm';
+import axiosInstance from '../../axios';
 
 
 const genderItems = [
@@ -10,21 +11,39 @@ const genderItems = [
     { id: 'other', title: 'Other' },
 ]
 
-const initialFValues = {
-    id: 0,
-    etiquette: '',
-    pmax: '',
-    vmp: '',
-    mpc: '',
-    isc: '',
-    msv: '',
-    test: '',
-    tc: '',
-    size: '',
-    isPermanent: false,
-}
+// const initialFValues = {
+//     id: 0,
+//     description: '',
+//     pmax: '',
+//     vmp: '',
+//     mpc: '',
+//     isc: '',
+//     msv: '',
+//     test: '',
+//     tc: '',
+//     size: '',
+//     isPermanent: false,
+// }
 
 export default function Add_panneau(props) {
+    // 'description','etatDevice','','','','','','','','','','create_by','deviceCategory'
+    const initialFormData = {
+        description: '',
+        etatDevice: '',
+        maximum_power: '',
+        power_voltage: '',
+        power_current: '',
+        circuit_voltage: '',
+        short_voltage: '',
+        max_voltage: '',
+        condition_test: '',
+        temperature: '',
+        size: '',
+        isPermanent: false,
+    }
+
+    const [formData, updateFormData] = useState(initialFormData);
+
     const { addOrEdit, recordForEdit } = props
 
     const validate = (fieldValues = values) => {
@@ -62,14 +81,47 @@ export default function Add_panneau(props) {
         setErrors,
         handleInputChange,
         resetForm
-    } = useForm(initialFValues, true, validate);
+    } = useForm(initialFormData, true, validate);
 
-    const handleSubmit = e => {
-        e.preventDefault()
-        if (validate()) {
-            addOrEdit(values, resetForm);
-        }
-    }
+    const handleChange = (e) => {
+		if ([e.target.name] == 'description') {
+			updateFormData({
+				...formData,
+				// Trimming any whitespace
+				[e.target.name]: e.target.value.trim(),
+				// ['deviceCategory']: slugify(e.target.value.trim()),
+			});
+		} else {
+			updateFormData({
+				...formData,
+				// Trimming any whitespace
+				[e.target.name]: e.target.value.trim(),
+			});
+		}
+	};
+
+    const handleSubmit = (e) => {
+		e.preventDefault();
+		axiosInstance
+			.post(`panneau-create/`, {
+                description: formData.description,
+                etatDevice: formData.etatDevice,
+                maximum_power: formData.maximum_power,
+                power_voltage: formData.power_voltage,
+                power_current: formData.power_current,
+                circuit_voltage: formData.circuit_voltage,
+                short_voltage: formData.short_voltage,
+                max_voltage: formData.max_voltage,
+                condition_test: formData.condition_test,
+                temperature: formData.temperature,
+                size: formData.size,
+                create_by: 1,
+                deviceCategory: 1
+			})
+			.then((res) => {
+				alert(res);
+			});
+	};
 
     useEffect(() => {
         if (recordForEdit != null)
@@ -83,39 +135,57 @@ export default function Add_panneau(props) {
             <Grid container>
                 <Grid item xs={6}>
                     <Controls.Input
-                        name="etiquette"
-                        label="Etiquette"
-                        value={values.etiquette}
-                        onChange={handleInputChange}
-                        error={errors.etiquette}
+                        name="description"
+                        label="Description de l'equipement"
+                        autoComplete="description"
+                        value={formData.description}
+                        onChange={handleChange}
+                        error={errors.description}
+                    />
+                    <Select
+                            labelId="Etat de la batterie"
+                            id="etatDevice"
+                            name="etatDevice"
+                            value={formData.etatDevice}
+                            onChange={handleChange}
+                            >
+                            <MenuItem value="1">Bonne</MenuItem>
+                            <MenuItem value="0">Mauvaise</MenuItem>
+                    </Select>
+                    <Controls.Input
+                        name="maximum_power"
+                        label="Maximum de power"
+                        value={formData.maximum_power}
+                        onChange={handleChange}
+                        error={errors.maximum_power}
                     />
                     <Controls.Input
-                        label="Pmax"
-                        name="pmax"
-                        value={values.pmax}
-                        onChange={handleInputChange}
-                        error={errors.pmax}
+                        label="Power voltage"
+                        name="power_voltage"
+                        value={formData.power_voltage}
+                        onChange={handleChange}
+                        error={errors.power_voltage}
                     />
                     <Controls.Input
-                        label="Vmp"
-                        name="vmp"
-                        value={values.vmp}
-                        onChange={handleInputChange}
-                        error={errors.vmp}
+                        label="Power current"
+                        name="power_current"
+                        value={formData.power_current}
+                        onChange={handleChange}
+                        error={errors.power_current}
                     />
                     <Controls.Input
-                        label="Mpc"
-                        name="mpc"
-                        value={values.mpc}
-                        onChange={handleInputChange}
-                        error={errors.mpc}
+                        label="Circuit"
+                        name="circuit_voltage"
+                        value={formData.circuit_voltage}
+                        onChange={handleChange}
+                        error={errors.circuit_voltage}
                     />
                     <Controls.Input
-                        label="Isc"
-                        name="isc"
-                        value={values.city}
-                        onChange={handleInputChange}
-                        error={errors.isc}
+                        label="Sjort voltage"
+                        name="short_voltage"
+                        value={formData.short_voltage}
+                        onChange={handleChange}
+                        error={errors.short_voltage}
                     />
 
                 </Grid>
@@ -137,38 +207,40 @@ export default function Add_panneau(props) {
                     />*/}
                     
                     <Controls.Input
-                        label="Msv"
-                        name="msv"
-                        value={values.msv}
-                        onChange={handleInputChange}
-                        error={errors.msv}
+                        label="Max voltage"
+                        name="max_voltage"
+                        value={formData.max_voltage}
+                        onChange={handleChange}
+                        error={errors.max_voltage}
                     />
                     <Controls.Input
-                        label="Test_cond"
-                        name="test"
-                        value={values.test}
-                        onChange={handleInputChange}
-                        error={errors.test}
+                        label="Condition test"
+                        name="condition_test"
+                        value={formData.condition_test}
+                        onChange={handleChange}
+                        error={errors.condition_test}
                     />
                     <Controls.Input
-                        label="Tc"
-                        name="tc"
-                        value={values.tc}
-                        onChange={handleInputChange}
-                        error={errors.tc}
+                        label="Temperature"
+                        name="temperature"
+                        value={formData.temperature}
+                        onChange={handleChange}
+                        error={errors.temperature}
                     />
                     <Controls.Input
                         label="Size"
                         name="size"
-                        value={values.size}
-                        onChange={handleInputChange}
+                        value={formData.size}
+                        onChange={handleChange}
                         error={errors.size}
                     />
 
                     <div>
                         <Controls.Button
                             type="submit"
-                            text="Enregister" />
+                            text="Enregister" 
+                            onClick={handleSubmit}
+                            />
                         {/*<Controls.Button
                             text="Reinitialiser"
                             color="default"

@@ -31,11 +31,11 @@ const useStyles = makeStyles(theme => ({
 
 const headCells = [
     { id: 'Etiquette', label: 'Etiquette' },
-    { id: 'Nom_vol', label: 'Nom_vol' },
-    { id: 'CyclVol', label: 'CyclVol' },
-    { id: 'LoatVol', label: 'LoatVol' },
-    { id: 'Capacite', label: 'Capacite' },
-    { id: 'Temp_coef', label: 'Temp_coef' },
+    { id: 'Description', label: 'Description' },
+    { id: 'Etat de la batterie', label: 'Etat de la batterie' },
+    { id: 'Voltage', label: 'Voltage' },
+    { id: 'Cycle', label: 'Cycle' },
+    { id: 'Createur', label: 'Createur' },
     { id: 'actions', label: 'Actions', disableSorting: true }
 ]
 
@@ -50,6 +50,7 @@ export default function UI_liste_batterie() {
     const [records, setRecords] = useState(employeeService.getAllEmployees())
     const [filterFn, setFilterFn] = useState({ fn: items => { return items; } })
     const [openPopup, setOpenPopup] = useState(false)
+    const [data, setData] = useState();
 
     const {
         TblContainer,
@@ -95,12 +96,11 @@ export default function UI_liste_batterie() {
     }, [1000]);
     let [batteries, setBatteries] = useState()
     useEffect(() => {
-        fetch("http://localhost:8000/api/panneau-list/")
+        fetch('http://127.0.0.1:8000/api/batterie-list/')
             .then(response => response.json())
 
             .then(batteries => setBatteries(batteries))
     }, [])
-
 
     return (
         <Box flex={4} p={{ xs: 0, md: 2 }}>
@@ -140,13 +140,13 @@ export default function UI_liste_batterie() {
                             <TableBody>
                                 {
                                     batteries.map(batterie =>
-                                    (<TableRow key={batterie.id}>
-                                        <TableCell key={batterie.id}><img src={"http://127.0.0.1:8000" + batterie.image} style={{width:35,height:35,boderRadius:'5px!important'}}/></TableCell>
-                                        <TableCell>{batterie.description}</TableCell>
-                                        <TableCell>{batterie.etatDevice}</TableCell>
-                                        <TableCell>{batterie.maximum_power}</TableCell>
-                                        <TableCell>{batterie.power_voltage}</TableCell>
-                                        <TableCell>{batterie.power_current}</TableCell>
+                                    (<TableRow key={batterie.listId}>
+                                        <TableCell key={batterie.listId}><img src={"http://127.0.0.1:8000" + batterie.image} style={{width:35,height:35,boderRadius:'5px!important'}}/></TableCell>
+                                        <TableCell>{batterie.detail}</TableCell>
+                                        <TableCell>{batterie.etat}</TableCell>
+                                        <TableCell>{batterie.normal}</TableCell>
+                                        <TableCell>{batterie.cycle}</TableCell>
+                                        <TableCell>{batterie.login}</TableCell>
                                         <TableCell>
                                             <Controls.ActionButton
                                                 color="primary"

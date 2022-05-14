@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import Add_panneau from '../components/forms/Add_panneau';
 import PageHeader from "../components/PageHeader";
 import PeopleOutlineTwoToneIcon from '@mui/icons-material/PeopleOutlineTwoTone';
@@ -11,7 +11,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Popup from "../components/Popup";
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import CloseIcon from '@mui/icons-material/Close';
-import { makeStyles } from '@mui/styles'
+import { makeStyles } from '@mui/styles';
 import Feed from '../components/Feed';
 
 const useStyles = makeStyles(theme => ({
@@ -30,15 +30,10 @@ const useStyles = makeStyles(theme => ({
 
 
 const headCells = [
-    { id: 'Etiquette', label: 'Etiquette' },
-    { id: 'Pmax', label: 'Pmax' },
-    { id: 'Vmp', label: 'Vmp' },
-    { id: 'Mpc', label: 'Mpc' },
-    { id: 'Isc', label: 'Isc' },
-    { id: 'Msv', label: 'Msv' },
-    { id: 'Test_cond', label: 'Test_cond' },
-    { id: 'Tc', label: 'Tc' },
-    { id: 'Size', label: 'Size' },
+    { id: 'Description', label: 'Description' },
+    { id: 'Etat du panneau', label: 'Etat du panneaux' },
+    { id: 'Max power', label: 'Max power' },
+    { id: 'Voltage power', label: 'Voltage power' },
     { id: 'actions', label: 'Actions', disableSorting: true }
 ]
 
@@ -85,6 +80,14 @@ export default function UI_liste_panneau() {
         setOpenPopup(true)
     }
 
+    let [panneaux, setPanneaux] = useState()
+    useEffect(() => {
+        fetch('http://127.0.0.1:8000/api/panneau-list/')
+            .then(response => response.json())
+
+            .then(panneaux => setPanneaux(panneaux))
+    }, [])
+
 
 
     const [loading, setLoading] = useState(true);
@@ -128,12 +131,12 @@ export default function UI_liste_panneau() {
                             <TblHead />
                             <TableBody>
                                 {
-                                    recordsAfterPagingAndSorting().map(item =>
-                                    (<TableRow key={item.id}>
-                                        <TableCell>{item.fullName}</TableCell>
-                                        <TableCell>{item.email}</TableCell>
-                                        <TableCell>{item.mobile}</TableCell>
-                                        <TableCell>{item.department}</TableCell>
+                                    panneaux.map(item =>
+                                    (<TableRow key={item.deviceId}>
+                                        <TableCell>{item.description}</TableCell>
+                                        <TableCell>{item.etatDevice}</TableCell>
+                                        <TableCell>{item.maximum_power}</TableCell>
+                                        <TableCell>{item.power_voltage}</TableCell>
                                         <TableCell>
                                             <Controls.ActionButton
                                                 color="primary"
