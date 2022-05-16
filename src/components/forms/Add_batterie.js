@@ -14,7 +14,6 @@ export default function Add_batterie(props) {
         loat_volatge: '',
         capacity: '',
         temperature_coefficient: '',
-        // deviceCategory: '',
         isPermanent: false,
     }
 
@@ -79,13 +78,6 @@ export default function Add_batterie(props) {
 
             .then(category => setCategory(category))
     }, [])
-
-    // useEffect(() => {
-    //     if (recordForEdit != null)
-    //         setValues({
-    //             ...recordForEdit
-    //         })
-    // }, [recordForEdit])
 
     const handleSubmit = (e) => {
 		e.preventDefault();

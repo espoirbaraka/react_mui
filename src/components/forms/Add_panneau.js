@@ -116,7 +116,7 @@ export default function Add_panneau(props) {
                 temperature: formData.temperature,
                 size: formData.size,
                 create_by: 1,
-                deviceCategory: 1
+                deviceCategory: 2
 			})
 			.then((res) => {
 				alert(res);

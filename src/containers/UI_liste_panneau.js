@@ -30,6 +30,7 @@ const useStyles = makeStyles(theme => ({
 
 
 const headCells = [
+    {id: 'Etiquette', label: 'Etiquette' },
     { id: 'Description', label: 'Description' },
     { id: 'Etat du panneau', label: 'Etat du panneaux' },
     { id: 'Max power', label: 'Max power' },
@@ -132,7 +133,8 @@ export default function UI_liste_panneau() {
                             <TableBody>
                                 {
                                     panneaux.map(item =>
-                                    (<TableRow key={item.deviceId}>
+                                    (<TableRow key={item.id}>
+                                        <TableCell key={item.id}><img src={"http://127.0.0.1:8000" + item.image} style={{width:35,height:35,boderRadius:'5px!important'}}/></TableCell>
                                         <TableCell>{item.description}</TableCell>
                                         <TableCell>{item.etatDevice}</TableCell>
                                         <TableCell>{item.maximum_power}</TableCell>

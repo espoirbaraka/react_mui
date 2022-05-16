@@ -140,8 +140,8 @@ export default function UI_liste_batterie() {
                             <TableBody>
                                 {
                                     batteries.map(batterie =>
-                                    (<TableRow key={batterie.listId}>
-                                        <TableCell key={batterie.listId}><img src={"http://127.0.0.1:8000" + batterie.image} style={{width:35,height:35,boderRadius:'5px!important'}}/></TableCell>
+                                    (<TableRow key={batterie.id}>
+                                        <TableCell key={batterie.id}><img src={"http://127.0.0.1:8000" + batterie.image} style={{width:35,height:35,boderRadius:'5px!important'}}/></TableCell>
                                         <TableCell>{batterie.detail}</TableCell>
                                         <TableCell>{batterie.etat}</TableCell>
                                         <TableCell>{batterie.normal}</TableCell>
