@@ -48,7 +48,7 @@ export default function Header() {
                         </IconButton>
                         <IconButton>
                             <Badge badgeContent={3} color="primary">
-                                <ChatBubbleOutlineIcon fontSize="small" />
+                                <ChatBubbleOutlineIcon fontSize="small" />``
                             </Badge>
                         </IconButton>
                         <IconButton>

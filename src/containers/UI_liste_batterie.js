@@ -13,6 +13,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@mui/styles'
 import Feed from '../components/Feed';
+import { Avatar } from '@mui/material';
 
 const useStyles = makeStyles(theme => ({
     pageContent: {
@@ -96,7 +97,8 @@ export default function UI_liste_batterie() {
     }, [1000]);
     let [batteries, setBatteries] = useState()
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/batterie-list/')
+        fetch("http://localhost:8000/api/batterie-list/")
+
             .then(response => response.json())
 
             .then(batteries => setBatteries(batteries))
